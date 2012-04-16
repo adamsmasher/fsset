@@ -1,1 +1,9 @@
-fsset is a simple program to maintain a database of sets on disk.
+fsset is a simple program to maintain a database of sets on disk. Each set is
+simply a directory on disk. Adding an element to a set is a 'touch' operation.
+Removing an element from a set is an 'unlink' operation.
+
+fsset uses a simple protocol and communicates over stdin/stdout. This works well
+when paired with djb's tcpserver program (part of his ucspi-tcp package,
+available at http://cr.yp.to/ucspi-tcp.html). The protocol is line-based and
+should be straightforward - see the library in the fssetpy/ subdirectory for a
+sample client implementation.
